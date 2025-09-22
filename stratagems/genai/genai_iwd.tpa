@@ -49,7 +49,7 @@ DEFINE_ACTION_FUNCTION genai_edits_before BEGIN
 	
 	// a few creatures should call for help but not respond to others' calls or go hostile on hearing them - they have an item which prevents them responding
 
-    LAF clone_item STR_VAR item=~dw#marker_file=>dw#nohlp~ END
+    LAF make_item STR_VAR item=~dw#nohlp~ END
     LAF edit_creature STR_VAR creature=~fleezum flozem fleezum2 flozem2 malavon marketh seth sethh~ editstring=~add_items=>dw#nohlp~ END
 
     // these ranged-only innate weapons need melee versions [code copy from genai.tpa]

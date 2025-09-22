@@ -490,7 +490,7 @@ END
 
 // prevent Amnish guards attacking Cowled Wizards
 
-	 LAF clone_item STR_VAR item=~dw#marker_file=>dw#cowle~ editstring=~droppable=>0~ END
+	 LAF make_item STR_VAR item=~dw#cowle~ editstring=~droppable=>0~ END
          LAF edit_creature STR_VAR creature=~cscowl9 cucow1 cucow2 cucow3 cuwiz1 cuwiz2 cuwiz3 cuwiz4 cuwiz5 cuwiz6 cuwizc cuwizsu~ editstring=~add_items=>dw#cowle~ END
          LAF swap_text STR_VAR files=seeenemy.bcs swaps=~!Class(LastSeenBy(Myself),FLAMING_FIST)=>!Class(LastSeenBy(Myself),FLAMING_FIST)!HasItem("dw#cowle",LastSeenBy(Myself))~ END
 

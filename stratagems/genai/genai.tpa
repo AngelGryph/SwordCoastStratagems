@@ -697,7 +697,7 @@ END
 
 DEFINE_ACTION_FUNCTION mark_hla_always BEGIN
 
-      LAF clone_item STR_VAR item=~dw#marker_file=>dw#mkhla~ editstring=~droppable=>0~ END
+      LAF make_item STR_VAR item=~dw#mkhla~ editstring=~droppable=>0~ END
       LAF read_in_list STR_VAR file=hla_always.2da location=hla_choices RET list END
       LAF edit_creature STR_VAR creature="%list%" editstring="add_items=>dw#mkhla" END
 

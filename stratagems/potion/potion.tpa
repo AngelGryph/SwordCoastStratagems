@@ -5,7 +5,7 @@ BEGIN
 
     LAF check_ini STR_VAR ini=potion_version RET version=value END
 
-    LAF clone_item STR_VAR item=~dw#marker_file=>dw#haspt~ editstring=~droppable=>0~ END
+    LAF make_item STR_VAR item=~dw#haspt~ editstring=~droppable=>0~ END
 
 //    ACTION_IF skip_tobex BEGIN OUTER_SET backup=1 END ELSE BEGIN OUTER_SET backup=0 END
     OUTER_SET backup=0

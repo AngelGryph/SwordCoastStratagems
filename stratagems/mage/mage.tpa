@@ -820,7 +820,7 @@ DEFINE_ACTION_FUNCTION make_mage_resources BEGIN
    // markers (I'm not sure all are used in current scripts, but we'll err on the side of caution)
 
    ACTION_FOR_EACH marker IN fgmag dispe notel mally fminv haste nopre area morhw magme hlamg BEGIN
-      LAF clone_item STR_VAR item= ~dw#marker_file=>dw#%marker%~ editstring=~droppable=>0~ END
+      LAF make_item STR_VAR item= ~dw#%marker%~ editstring=~droppable=>0~ END
    END
    
    // reckless dweomer

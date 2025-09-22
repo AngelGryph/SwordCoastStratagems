@@ -382,7 +382,7 @@ END
 DEFINE_ACTION_FUNCTION random_useful_items BEGIN
 
 	ACTION_FOR_EACH item IN dw#noptn dw#magat dw#attac dw#move0 dw#nodor dw#noinv dw#deseq dw#area dw#nopre dw#dispe BEGIN
-		COPY_EXISTING "dw#marker_file.itm" "override/%item%.itm"
+		CREATE ITM "%item%"
 			WRITE_LONG 0x18 (THIS BAND (BNOT BIT2))
 	END
 

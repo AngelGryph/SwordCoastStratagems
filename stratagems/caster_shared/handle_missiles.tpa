@@ -24,7 +24,7 @@ DEFINE_ACTION_FUNCTION handle_missiles BEGIN
 		
 		// make marker
 		
-		COPY_EXISTING "dw#marker_file.itm" "override/dw#missl.itm" 
+		CREATE ITM "dw#missl" 
 			WRITE_BYTE 0x18 0 // undroppable
 
 		// get dispel to remove dw#missl and missiles

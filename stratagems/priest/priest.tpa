@@ -239,7 +239,7 @@ DEFINE_ACTION_FUNCTION priest_edits_before BEGIN
 
          // HLA markers
      
-         LAF clone_item STR_VAR item= ~dw#marker_file=>dw#hlapr~ editstring=~droppable=>0~ END
+         LAF make_item STR_VAR item=~dw#hlapr~ editstring=~droppable=>0~ END
          LAF read_in_list STR_VAR file="hla.2da" RET list END
          OUTER_WHILE "%list%" STRING_COMPARE "" BEGIN
                LAF return_first_entry STR_VAR list RET creature=entry list END
