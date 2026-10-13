@@ -369,10 +369,21 @@ BEGIN
 		PATCH_FOR_EACH match_opcode IN 12 139 171 172 144 145 135 111 321 BEGIN
 			LPF DELETE_EFFECT INT_VAR match_opcode END
 		END
+		// EE Fixpack clears the magical-weapon slot before changing form, then
+		// creates the replacement weapon on a zero-second delay. Preserve that
+		// transition for both pre-existing forms and forms created from scratch.
+		PATCH_IF FILE_EXISTS_IN_GAME "spinhumr.spl" BEGIN
+			LPF DELETE_EFFECT INT_VAR match_opcode=146 STR_VAR match_resource=spinhumr END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 timing=1 parameter2=1 STR_VAR resource=spinhumr END
+		END
 		// remove polymorph-granted powers
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 timing=1 parameter2=1 STR_VAR resource="%spl_shapeshift_remove_abilities%" END
 		// payload
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=111 target=1 duration timing STR_VAR resource="%weapon%" END
+		PATCH_IF FILE_EXISTS_IN_GAME "spinhumr.spl" BEGIN
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=111 target=1 parameter1=1 timing=4 duration=0 STR_VAR resource="%weapon%" END
+		END ELSE BEGIN
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=111 target=1 duration timing STR_VAR resource="%weapon%" END
+		END
 		// auto-renew
 		PATCH_IF auto_renew BEGIN
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 target=1 timing=1 STR_VAR resource="%spell%" END		
