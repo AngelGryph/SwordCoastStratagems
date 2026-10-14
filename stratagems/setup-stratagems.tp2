@@ -454,7 +454,7 @@ REQUIRE_PREDICATE (GAME_IS ~tutu tutu_totsc bgee bg2ee eet iwdee~ || MOD_IS_INST
 REQUIRE_PREDICATE !GAME_IS ~iwdee~ @50009
 
 REQUIRE_PREDICATE !GAME_IS ~bgt tutu tutu_totsc bgee eet~ @16000
-REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0) @3376
+REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 1) @3376
 
 LAF run STR_VAR files=fine_weapons location=item tra=fine_weapons END
 
@@ -467,7 +467,7 @@ REQUIRE_PREDICATE (GAME_IS ~tutu tutu_totsc bgee bg2ee eet iwdee~ || MOD_IS_INST
 REQUIRE_PREDICATE !GAME_IS ~iwdee~ @50009
 
 REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc bgee eet~ @16001
-REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 0) @3376
+REQUIRE_PREDICATE !(MOD_IS_INSTALLED ~item_rev/item_rev.tp2~ 1) @3376
 
 LAF run STR_VAR files=~fine_weapons~ version=~no_shatter~ location=item tra=fine_weapons END
 
