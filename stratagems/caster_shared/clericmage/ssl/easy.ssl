@@ -185,7 +185,7 @@ END
 IF TRIGGER
    Target(NearestEnemyOf(Myself))
    Range(scstarget,6)
-   TriggerBlock(Easiest)
+   TriggerBlock(Easiest|Enemy)
 THEN DO
      Action(Spell,WIZARD_CONE_OF_COLD) 
      Action(SpellMyself,CLERIC_SLAY_LIVING)

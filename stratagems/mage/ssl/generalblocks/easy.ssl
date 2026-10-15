@@ -256,7 +256,7 @@ END
 IF TRIGGER
    Target(NearestEnemyOf(Myself))
    Range(scstarget,6)
-   TriggerBlock(Easiest)
+   TriggerBlock(Easiest|Enemy)
 THEN DO
      Action(Spell,WIZARD_CONE_OF_COLD|100|50)
      Action(Spell,WIZARD_VAMPIRIC_TOUCH|100|50)
