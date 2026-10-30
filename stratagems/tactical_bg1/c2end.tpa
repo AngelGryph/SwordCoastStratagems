@@ -25,7 +25,7 @@ DEFINE_ACTION_FUNCTION mulahey_flunkies BEGIN
       enforce_saves=>at_worst
       genai=>all
       strip_script=>~%tutu_var%helpmul~
-      insert_script_high=>helpmul
+      insert_script_high=>~%tutu_var%helpmul~
    END
    LAF edit_creature STR_VAR creature= ~%tutu_var%kobold7~ edits=patch_data END
 
@@ -73,7 +73,7 @@ ALTER_TRANS ~%tutu_var%mulahe~
 BEGIN 2 6 8 END
 BEGIN 0 END
 BEGIN
-"ACTION" ~Enemy() SetGlobal("CDMulahey","%NashkelMines_MulaheysCave%",3) SetGlobal("DMWWMulaheyFight","MYAREA",1)SetGlobal("DMWWMulaheyFlunky","MYAREA",1)~  // the CDMulahey is relevant only on BGEE
+"ACTION" ~Enemy() SetGlobal("CDMulahey","%NashkelMines_MulaheysCave%",3) SetGlobal("DMWWMulaheyFight","MYAREA",1) SetGlobal("DMWWMulaheyFlunky","MYAREA",1)~  // the CDMulahey is relevant only on BGEE
 END
 >>>>>>>>
      LAF install INT_VAR inline=1 STR_VAR files=mulreplace.d END
